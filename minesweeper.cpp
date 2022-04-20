@@ -2,7 +2,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include "FactoryOpenGl.h"
-#include "ShaderOpenGl.h"
+#include "IShader.h"
+#include "ITransformer.h"
 
 int main()
 {
@@ -64,14 +65,22 @@ int main()
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
+    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+
     while (glfwWindowShouldClose(window) == 0) {
         glfwPollEvents();
 
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
+        ITransformer* transformer = factory->makeTransformer();
+        transformer->rotate(45.0f, { 0.0f, 0.0f, 1.0f });
+        transformer->scale({ 0.5f, 0.5f, 0.5f });
+
         shader->use();
-        shader->addUniform("ourColor", 0.0f, 1.0f, 0.0f, 1.0f);
+        shader->setUniform("ourColor", 0.0f, 1.0f, 0.0f, 1.0f);
+        shader->setUniform("transform", transformer);
+        delete transformer;
 
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);

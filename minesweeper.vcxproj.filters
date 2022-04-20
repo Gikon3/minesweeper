@@ -27,6 +27,9 @@
     <ClCompile Include="glad\glad.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="TransformerOpenGl.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FactoryOpenGl.h">
@@ -39,6 +42,12 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="ShaderOpenGl.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformerOpenGl.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="ITransformer.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

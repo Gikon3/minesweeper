@@ -80,13 +80,13 @@
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>./glad/;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Programs\glfw-3.3.7\lib-vc2022;$(LibraryPath)</LibraryPath>
-    <ExternalIncludePath>C:\Programs\glfw-3.3.7\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <ExternalIncludePath>C:\Programs\glfw-3.3.7\include;C:\Programs\glm-0.9.5.4;$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>./glad/;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Programs\glfw-3.3.7\lib-vc2022;$(LibraryPath)</LibraryPath>
-    <ExternalIncludePath>C:\Programs\glfw-3.3.7\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <ExternalIncludePath>C:\Programs\glfw-3.3.7\include;C:\Programs\glm-0.9.5.4;$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -151,6 +151,7 @@
   <ItemGroup>
     <ClCompile Include="FactoryOpenGl.cpp" />
     <ClCompile Include="glad\glad.c" />
+    <ClCompile Include="TransformerOpenGl.cpp" />
     <ClCompile Include="minesweeper.cpp" />
     <ClCompile Include="ShaderOpenGl.cpp" />
   </ItemGroup>
@@ -158,6 +159,8 @@
     <ClInclude Include="FactoryOpenGl.h" />
     <ClInclude Include="IFactory.h" />
     <ClInclude Include="IShader.h" />
+    <ClInclude Include="ITransformer.h" />
+    <ClInclude Include="TransformerOpenGl.h" />
     <ClInclude Include="ShaderOpenGl.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

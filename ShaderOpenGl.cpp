@@ -39,24 +39,29 @@ ShaderOpenGl::ShaderOpenGl(const std::string& vertexFilePath, const std::string&
     linkProgram(vertex, fragment);
 }
 
-void ShaderOpenGl::addUniform(const std::string& name, int value) const
+void ShaderOpenGl::setUniform(const std::string& name, int value) const
 {
     glUniform1i(glGetUniformLocation(_program, name.c_str()), value);
 }
 
-void ShaderOpenGl::addUniform(const std::string& name, float value) const
+void ShaderOpenGl::setUniform(const std::string& name, float value) const
 {
     glUniform1f(glGetUniformLocation(_program, name.c_str()), value);
 }
 
-void ShaderOpenGl::addUniform(const std::string& name, int value0, int value1, int value2, int value3) const
+void ShaderOpenGl::setUniform(const std::string& name, int value0, int value1, int value2, int value3) const
 {
     glUniform4i(glGetUniformLocation(_program, name.c_str()), value0, value1, value2, value3);
 }
 
-void ShaderOpenGl::addUniform(const std::string& name, float value0, float value1, float value2, float value3) const
+void ShaderOpenGl::setUniform(const std::string& name, float value0, float value1, float value2, float value3) const
 {
     glUniform4f(glGetUniformLocation(_program, name.c_str()), value0, value1, value2, value3);
+}
+
+void ShaderOpenGl::setUniform(const std::string& name, const ITransformer* transformer) const
+{
+    glUniformMatrix4fv(glGetUniformLocation(_program, name.c_str()), 1, GL_FALSE, transformer->valuePtr());
 }
 
 void ShaderOpenGl::use() const
