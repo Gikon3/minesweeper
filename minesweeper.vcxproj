@@ -154,14 +154,17 @@
     <ClCompile Include="TransformerOpenGl.cpp" />
     <ClCompile Include="minesweeper.cpp" />
     <ClCompile Include="ShaderOpenGl.cpp" />
+    <ClCompile Include="VaoOpenGl.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FactoryOpenGl.h" />
     <ClInclude Include="IFactory.h" />
     <ClInclude Include="IShader.h" />
     <ClInclude Include="ITransformer.h" />
+    <ClInclude Include="IVao.h" />
     <ClInclude Include="TransformerOpenGl.h" />
     <ClInclude Include="ShaderOpenGl.h" />
+    <ClInclude Include="VaoOpenGl.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

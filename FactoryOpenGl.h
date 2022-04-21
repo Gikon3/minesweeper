@@ -8,4 +8,5 @@ struct FactoryOpenGl final : public IFactory
     ~FactoryOpenGl() = default;
     IShader* makeShader(const std::string& vertexFilePath, const std::string& fragmentFilePath) const override;
     ITransformer* makeTransformer() const override;
+    IVao* makeVao() const override;
 };

@@ -1,6 +1,7 @@
 #include "FactoryOpenGl.h"
 #include "ShaderOpenGl.h"
 #include "TransformerOpenGl.h"
+#include "VaoOpenGl.h"
 
 IShader* FactoryOpenGl::makeShader(const std::string& vertexFilePath, const std::string& fragmentFilePath) const
 {
@@ -10,4 +11,9 @@ IShader* FactoryOpenGl::makeShader(const std::string& vertexFilePath, const std:
 ITransformer* FactoryOpenGl::makeTransformer() const
 {
     return new TransformerOpenGl();
+}
+
+IVao* FactoryOpenGl::makeVao() const
+{
+    return new VaoOpenGl();
 }
